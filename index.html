@@ -1,0 +1,76 @@
+<!-- 
+Name: Ashton Roxas
+Date: 11/26/2025
+File: index.html
+
+GUI Assignment:
+    This assignment creates a dynamic multiplication table using user-defined input ranges.
+    PART 1: Implementation uses the jQuery Validation plugin for client-side validation.
+
+Ashton Roxas, UMass Lowell Computer Science, ashton_roxas@student.uml.edu
+Copyright (c) 2025.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW4 - Dynamic Multiplication Table & Validation</title>
+    <!-- Using the user's provided stylesheet path -->
+    <link rel="stylesheet" href="style/style.css" /> 
+</head>
+<body>
+
+    <main class="container">
+        <h1>Dynamic Multiplication Table</h1>
+
+        <section class="input-card">
+            <h2>Input Ranges</h2>
+            <form id="rangeForm">
+                <div class="input-row">
+                    <label for="colStart">Column Start</label>
+                    <!-- Added name="colStart" for validation plugin -->
+                    <input type="number" id="colStart" name="colStart" required /> 
+                    <!-- Custom error container for precise placement -->
+                    <div id="colStartError" class="error-container"></div>
+                </div>
+
+                <!-- Column End -->
+                <div class="input-row">
+                    <label for="colEnd">Column End</label>
+                    <!-- Added name="colEnd" for validation plugin -->
+                    <input type="number" id="colEnd" name="colEnd" required />
+                    <div id="colEndError" class="error-container"></div>
+                </div>
+
+                <!-- Row Start -->
+                <div class="input-row">
+                    <label for="rowStart">Row Start</label>
+                    <!-- Added name="rowStart" for validation plugin -->
+                    <input type="number" id="rowStart" name="rowStart" required />
+                    <div id="rowStartError" class="error-container"></div>
+                </div>
+
+                <!-- Row End -->
+                <div class="input-row">
+                    <label for="rowEnd">Row End</label>
+                    <input type="number" id="rowEnd" name="rowEnd" required />
+                    <div id="rowEndError" class="error-container"></div>
+                </div>
+
+                <button type="submit" class="generate-btn">Generate Table</button>
+            </form>
+        </section>
+
+        <section id="tableWrapper">
+            <p class="placeholder-text">Enter the four parameters above and click 'Generate Table' to see your result.</p>
+        </section>
+    </main>
+
+    <!-- Load jQuery first, then the validation plugin, then your script -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

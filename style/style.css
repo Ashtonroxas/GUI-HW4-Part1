@@ -1,0 +1,212 @@
+/*
+Name: Ashton Roxas
+Date: 11/26/2025
+File: styles.css (Updated for HW4 Part 1 Validation)
+*/
+
+/* Base Styles & Typography */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2e003e, #4a148c, #6a1b9a);
+    margin: 0;
+    padding: 0;
+    color: #f3e5f5;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+h1 {
+    color: #ede7f6;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== INPUT CARD ===== */
+.input-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    padding: 25px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(8px);
+}
+
+.input-card h2 {
+    margin-bottom: 15px;
+    color: #f3e5f5;
+    font-weight: 700;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.input-row {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: relative; 
+}
+
+.input-row label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #e1bee7;
+}
+
+.input-row input {
+    padding: 8px;
+    border: 1px solid #b39ddb;
+    border-radius: 6px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Style for inputs that receive focus */
+.input-row input:focus {
+    border-color: #d1c4e9; /* Lighter purple on focus */
+    box-shadow: 0 0 0 3px rgba(209, 196, 233, 0.4);
+    outline: none;
+}
+
+/* ---------------------------------------------------- */
+/* Validation Error Styling (New styles for HW4 Part 1) */
+/* ---------------------------------------------------- */
+
+/* Highlight: Style the input when it has an error */
+.input-row.has-error input[type="number"],
+input.error {
+    border-color: #ff8a80 !important; /* Red error border */
+    box-shadow: 0 0 0 3px rgba(255, 138, 128, 0.4);
+}
+
+/* Error Message Container Style - ensures layout stability */
+.error-container {
+    /* Use a min-height to reserve space and prevent layout shifts when the error appears/disappears */
+    min-height: 25px; 
+    margin-top: 5px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* Style the dynamically generated error label */
+label.error {
+    color: #ff8a80; /* User's preferred error color */
+    display: block;
+    padding: 2px 0;
+    margin: 0;
+}
+
+/* ---------------------------------------------------- */
+/* Button Styles */
+/* ---------------------------------------------------- */
+.generate-btn {
+    grid-column: 1 / -1;
+    background: linear-gradient(90deg, #7b1fa2, #8e24aa);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.generate-btn:hover {
+    background: linear-gradient(90deg, #6a1b9a, #4a148c);
+    transform: scale(1.02); 
+}
+
+/* ---------------------------------------------------- */
+/* Table Styles */
+/* ---------------------------------------------------- */
+#tableWrapper {
+    overflow: auto;
+    max-height: 450px;
+    border: 2px solid #b388eb;
+    border-radius: 10px;
+    background: #1c0030;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Added placeholder text style for initial empty state */
+#tableWrapper .placeholder-text {
+    color: #e1bee7;
+    padding: 40px;
+    font-style: italic;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    color: #ffffff;
+}
+
+th, td {
+    border: 1px solid #5e35b1;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    /* Adding min-width for better behavior with long ranges */
+    min-width: 45px;
+}
+
+th {
+    background: #4a148c;
+    color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+th:first-child, td:first-child {
+    background: #3a0d64;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    font-weight: 600;
+}
+
+tr:nth-child(even) td {
+    background-color: #2e004f;
+}
+
+tr:nth-child(odd) td {
+    background-color: #3a006f;
+}
+
+td:hover {
+    background-color: #6a1b9a;
+    color: #fff;
+    transition: 0.2s;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .input-row label {
+        font-size: 14px;
+    }
+
+    .input-row input {
+        font-size: 14px;
+    }
+
+    .generate-btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
