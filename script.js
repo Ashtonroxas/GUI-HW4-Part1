@@ -18,7 +18,7 @@ $(document).ready(function() {
     }, function(params, element) {
         const label = $(element).closest('.input-row').find('label').text().replace(':', '');
         const partnerLabel = $(params).closest('.input-row').find('label').text().replace(':', '');
-        return `🚫 ${label} must be equal to or greater than ${partnerLabel}. Please increase the end value.`;
+        return `${label} must be equal to or greater than ${partnerLabel}. Please increase the end value.`;
     });
 
     // STEP 2: Initialize jQuery Validation Plugin
@@ -72,8 +72,8 @@ $(document).ready(function() {
                 max: `Value is too large. Enter a value from ${MIN_ALLOWED_VAL} to ${MAX_ALLOWED_VAL}.`,
             },
             rowStart: {
-                required: "🚨 Missing value! Please enter the starting row number.",
-                number: "🔢 Must be a number. Integers only (e.g., 5 or -5).",
+                required: "Missing value! Please enter the starting row number.",
+                number: "Must be a number. Integers only (e.g., 5 or -5).",
                 min: `Value is too small. Enter a value from ${MIN_ALLOWED_VAL} to ${MAX_ALLOWED_VAL}.`,
                 max: `Value is too large. Enter a value from ${MIN_ALLOWED_VAL} to ${MAX_ALLOWED_VAL}.`
             },
@@ -85,7 +85,6 @@ $(document).ready(function() {
             }
         },
 
-        // Customize Error Placement (Pillar: direct the user to the precise location)
         errorPlacement: function(error, element) {
             // Append the error message to the custom container below the input (e.g., #colStartError)
             const errorContainerId = element.attr('id') + "Error";
@@ -113,7 +112,7 @@ function renderTable() {
 
     // 2. Create the HTML table structure using jQuery
     const $tableWrapper = $('#tableWrapper');
-    $tableWrapper.empty(); // Clear previous content
+    $tableWrapper.empty(); 
     
     // Simple check to prevent rendering absurdly huge tables (though validation handles range limits)
     if (Math.abs(cEnd - cStart) > 200 || Math.abs(rEnd - rStart) > 200) {

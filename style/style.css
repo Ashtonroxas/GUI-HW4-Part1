@@ -1,7 +1,7 @@
 /*
 Name: Ashton Roxas
 Date: 11/26/2025
-File: styles.css (Updated for HW4 Part 1 Validation)
+File: style.css (Updated for HW4 Part 1 Validation
 */
 
 /* Base Styles & Typography */
@@ -28,7 +28,7 @@ h1 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== INPUT CARD ===== */
+/* INPUT CARD */
 .input-card {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -81,20 +81,15 @@ form {
     outline: none;
 }
 
-/* ---------------------------------------------------- */
 /* Validation Error Styling (New styles for HW4 Part 1) */
-/* ---------------------------------------------------- */
-
-/* Highlight: Style the input when it has an error */
 .input-row.has-error input[type="number"],
 input.error {
-    border-color: #ff8a80 !important; /* Red error border */
+    border-color: #ff8a80 !important; 
     box-shadow: 0 0 0 3px rgba(255, 138, 128, 0.4);
 }
 
 /* Error Message Container Style - ensures layout stability */
 .error-container {
-    /* Use a min-height to reserve space and prevent layout shifts when the error appears/disappears */
     min-height: 25px; 
     margin-top: 5px;
     font-size: 0.9em;
@@ -109,9 +104,7 @@ label.error {
     margin: 0;
 }
 
-/* ---------------------------------------------------- */
 /* Button Styles */
-/* ---------------------------------------------------- */
 .generate-btn {
     grid-column: 1 / -1;
     background: linear-gradient(90deg, #7b1fa2, #8e24aa);
@@ -129,9 +122,7 @@ label.error {
     transform: scale(1.02); 
 }
 
-/* ---------------------------------------------------- */
 /* Table Styles */
-/* ---------------------------------------------------- */
 #tableWrapper {
     overflow: auto;
     max-height: 450px;
