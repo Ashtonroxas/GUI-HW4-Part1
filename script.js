@@ -3,7 +3,6 @@
  * Date: 11/26/2025
  * File: script.js
  *
- * Ashton Roxas, UMass Lowell Computer Science, ashton_roxas@student.uml.edu
  */
 
 const MIN_ALLOWED_VAL = -50;
