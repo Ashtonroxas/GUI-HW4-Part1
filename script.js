@@ -10,7 +10,6 @@ const MIN_ALLOWED_VAL = -50;
 const MAX_ALLOWED_VAL = 50;
 
 $(document).ready(function() {
-    // STEP 1: Define Custom Validation Methods
     $.validator.addMethod("greaterThanEqual", function(value, element, params) {
         const minElementValue = $(params).val();
 
@@ -40,7 +39,7 @@ $(document).ready(function() {
                 number: true,
                 min: MIN_ALLOWED_VAL,
                 max: MAX_ALLOWED_VAL,
-                greaterThanEqual: "#colStart" // Custom rule check: colEnd >= colStart
+                greaterThanEqual: "#colStart" 
             },
             rowStart: {
                 required: true,
@@ -53,11 +52,10 @@ $(document).ready(function() {
                 number: true,
                 min: MIN_ALLOWED_VAL,
                 max: MAX_ALLOWED_VAL,
-                greaterThanEqual: "#rowStart" // Custom rule check: rowEnd >= rowStart
+                greaterThanEqual: "#rowStart" 
             }
         },
 
-        // Customize Error Messages (Pillar: explain exactly what the problem is)
         messages: {
             colStart: {
                 required: "Missing value! Please enter the starting column number.",
@@ -86,12 +84,10 @@ $(document).ready(function() {
         },
 
         errorPlacement: function(error, element) {
-            // Append the error message to the custom container below the input (e.g., #colStartError)
             const errorContainerId = element.attr('id') + "Error";
             error.appendTo($('#' + errorContainerId));
         },
 
-        // Highlight/Unhighlight classes for visual feedback
         highlight: function(element, errorClass, validClass) {
             $(element).addClass(errorClass).removeClass(validClass);
             $(element).closest('.input-row').addClass('has-error');
@@ -114,7 +110,6 @@ function renderTable() {
     const $tableWrapper = $('#tableWrapper');
     $tableWrapper.empty(); 
     
-    // Simple check to prevent rendering absurdly huge tables (though validation handles range limits)
     if (Math.abs(cEnd - cStart) > 200 || Math.abs(rEnd - rStart) > 200) {
          $tableWrapper.html('<p class="placeholder-text error">Table size too large to render efficiently. Keep ranges tighter.</p>');
          return;
